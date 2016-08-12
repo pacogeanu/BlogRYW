@@ -1,0 +1,42 @@
+<template name="myLatestWidgetTemplate">	
+	<div class="container-fluid">
+		<div class="meteor-blog-single">
+			{{#with shareData}}	
+				{{#if postImage}}
+					{{>showImage}}
+				{{/if}}
+			{{/with}}
+	       
+			<div class="meteor-blog-post">
+	    		<div class="meteor-blog-post-main">
+	      		{{#with shareData}}	
+		        	<h1 class="meteor-blog-post-title text-center">
+		          		{{title}}
+		        	</h1>
+		        	<div class="meteor-blog-post-meta text-center">
+		        		{{ BlogLanguage.metaAuthorBy }} {{authorName}} {{ BlogLanguage.metaAuthorOn }} {{blogFormatDate publishedAt}}
+		        	</div>
+		      
+					<div id="commentable-area">{{{body}}}</div>
+				{{/with}}
+				</div>
+			    <div class="meteor-blog-back-link pull-left">
+			      <a href="/blog"><i class="fa fa-columns"></i>To the Blog</a>
+			    </div>
+			    <div class="share-buttons">
+				    <a href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=http%3A%2F%2Flocalhost%3A3000%2Fblog%2Ffive&amp;p[title]=five&amp;p[summary]=Malala%20Yousafza%2C%20who%20was%20shot%20as%20a%20schoolgirl%20for%20defying%20a%20Taliban%20ban%20on%20girls%20attending%20school%20and%20who%20subsequently%20won%20the%20Nobel%20Peace%20Prize%2C%20is%20speaking%20now.&amp;p[images][0]=http%3A%2F%2Flocalhost%3A3000%2Fcfs%2Ffiles%2Fblog_images%2FPeLZdSYBssqvXQThN%2F11870943_1668615563354904_8147245788744375144_n.jpg%3Ftoken%3DeyJhdXRoVG9rZW4iOiIyWHYtMjhLaHhNZXNUX1NtYTlkaTlVNFY3TnBBYWRmLTY0V3RiSjNSVE51In0%253D" target="_blank" class="large btn shareit-facebook-colors fb-share"><i class="fa fa-facebook"></i> Share on Facebook</a>    
+				    <a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Flocalhost%3A3000%2Fblog%2Ffive&amp;text=five&amp;via=test%40test.com" class="large btn shareit-twitter-colors tw-share"><i class="fa fa-twitter"></i> Share on Twitter</a>
+				</div>
+	  		</div>
+		</div>
+	</div>
+</template>
+
+<template name="showImage">
+    <div class="meteor-blog-aspect-ratio-placeholder">
+      <img src="{{postImage}}" alt="" class="img-responsive center-block">
+    </div>
+</template>
+
+
+

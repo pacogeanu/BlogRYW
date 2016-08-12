@@ -1,0 +1,45 @@
+<template name="news">
+	<div class="container-fluid text-center" >
+		<div class="col-md-12">
+		<div class="row content">
+		    <div class="col-md-offset-1 col-md-7 text-left">
+		      <h1 class="meteor-blog-post-title text-center">Our Latest Article</h1>
+		     
+		     {{>myLatestWidgetTemplate}}
+		    </div>
+		    
+		  {{>dashboard}} 	
+	    </div>
+  	</div>
+	</div>
+</template>
+
+<template name="dashboard">
+	{{#tableWrapper heading="Customers" footer="Most recent data available."}}
+	{{#each photos}}
+      <tr>
+      	{{#if isDiplayable photo1}}
+	      <td style="height:200px"><a href="/blog/{{slug1}}"><img src="{{photo1}}" style="height:99%;width:99%"></a></td>
+	    {{/if}}
+	    {{#if isDiplayable photo2}}
+	     <td style="height:200px"><a href="/blog/{{slug2}}"><img src="{{photo2}}" style="height:99%;width:99%"></a></td>
+	    {{/if}}
+      </tr>
+    {{/each}}
+  {{/tableWrapper}}
+</template>
+
+<template name="tableWrapper">
+   <div class="col-md-3 sidenav" style="margin-top: 42px;">
+	   	<table id="image_table" class="table table-condensed" style="table-layout: fixed;border: 1px solid #ddd;width:100%">
+    		<td colspan="2" style="border-bottom: 1px solid #ddd;">Latest Photos</td>
+	   		 {{> UI.contentBlock}}
+	   		<td colspan="2"><a id="loadMorePhotos" href=""><span class="glyphicon glyphicon-plus"></span></a></td>
+	   	</table>
+	</div>
+</template>
+
+
+
+
+

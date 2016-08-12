@@ -1,0 +1,23 @@
+<template name="layoutIndexBlog">
+   <!--{{> blogIndex}}-->
+  <div class="container">
+    <div class="row">
+    	cucu bau
+        {{#if blogReady}}
+              {{#each posts}}
+                <li>
+                  <a href="/{{slug}}"><h2>{{title}}</h2></a>
+                  <p>Published on {{publishedAt}}</p>
+                  <img src="{{featuredImage}}" class="img-responsive"> 
+                  <p>{{excerpt}}</p>
+                    {{> shareit}}
+                </li>
+              {{else}}
+                <li>No posts found.</li>
+              {{/each}}
+            {{else}}
+              <li>Loading...</li>
+        {{/if}}
+    </div>    
+</div>
+</template>

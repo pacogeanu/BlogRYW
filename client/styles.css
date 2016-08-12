@@ -1,0 +1,9 @@
+td {
+    padding: 3px;
+    width:auto;
+    height:auto;
+}
+
+.meteor-blog-post-excerpt small {
+	font-size:100%;
+}
